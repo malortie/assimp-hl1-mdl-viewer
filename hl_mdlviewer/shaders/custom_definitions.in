@@ -1,0 +1,4 @@
+#include "locations.in"
+
+mat4 g_BoneMatrix = g_BoneMatrices[boneid];
+mat4 g_BoneOffsetMatrix = g_BoneOffsetMatrices[boneid];

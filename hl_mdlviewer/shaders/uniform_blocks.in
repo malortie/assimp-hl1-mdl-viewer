@@ -1,0 +1,27 @@
+layout (std140) uniform Global
+{
+    mat4 g_SceneTransform;
+    vec4 g_LightColor;
+    vec4 g_LightDirection;
+    float g_AmbientLight;
+    float g_ShadeLight;
+    float g_Lambert;
+    bool g_LightingEnabled;
+};
+
+layout (std140) uniform Matrices
+{
+    mat4 g_Projection;
+    mat4 g_View;
+    mat4 g_Model;
+};
+
+layout (std140) uniform BoneMatrices
+{
+    mat4 g_BoneMatrices[128];
+};
+
+layout (std140) uniform BoneOffsetMatrices
+{
+    mat4 g_BoneOffsetMatrices[128];
+};

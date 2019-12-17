@@ -1,0 +1,30 @@
+#include "uniform_blocks.in"
+
+float calculateLightingIntensity(in vec3 normalWorldSpace, in bool flatshade)
+{
+    float illum = g_AmbientLight;
+
+    if (flatshade)
+    {
+        illum += g_ShadeLight * 0.8f;
+    }
+    else
+    {
+        vec3 lightDirectionWorldSpace = mat3(g_Model) * g_LightDirection.xyz;
+    
+        float lightcos = dot(normalize(lightDirectionWorldSpace), normalize(normalWorldSpace));
+        lightcos = clamp(lightcos, -1.0f, 1.0f);
+        illum += g_ShadeLight;
+        float r = max(g_Lambert, 1.0f);
+        lightcos = (lightcos + (r - 1.0f)) / r;
+        if (lightcos > 0.0f) 
+        {
+            illum -= g_ShadeLight * lightcos; 
+        }
+        if (illum <= 0)
+            illum = 0;
+    }
+    illum = clamp(illum, 0.0f, 255.0f);
+    float intensity = illum / 255.0f;
+    return intensity;
+}
