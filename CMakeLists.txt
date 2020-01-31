@@ -41,7 +41,6 @@ set(GLM_INCLUDE_DIRS ${glm_SOURCE_DIR})
 # Add Assimp.
 ADD_EXTERNAL_PROJECT(assimp
     https://github.com/malortie/assimp.git
-    hl1-mdl-loader
 )
 
 set(ASSIMP_INCLUDE_DIRS "")
