@@ -9,7 +9,7 @@
 #include "bbox_builder.h"
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
-#include "../code/MDL/HalfLife/HL1ImportDefinitions.h"
+#include "../code/AssetLib/MDL/HalfLife/HL1ImportDefinitions.h"
 
 #include <fstream>
 #include <sstream>
