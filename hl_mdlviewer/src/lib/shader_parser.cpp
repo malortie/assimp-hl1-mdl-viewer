@@ -7,9 +7,9 @@
 #include "shader_parser.h"
 #include <iostream>
 #include <fstream>
-#include <experimental/filesystem>
+#include <filesystem>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 namespace hl_mdlviewer {
 

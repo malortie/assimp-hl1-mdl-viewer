@@ -5,9 +5,9 @@
 
 #include "pch.h"
 #include "file_system.h"
-#include <experimental/filesystem>
+#include <filesystem>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 namespace hl_mdlviewer {
 
@@ -53,7 +53,7 @@ bool FileSystem::find_file(const char* file_name,
             for (auto& sub_directory : fs::recursive_directory_iterator(search_path))
             {
                 path.clear();
-                path.append(sub_directory);
+                path.append(sub_directory.path().string());
                 path.append(file_name);
                 if (fs::exists(path))
                 {
